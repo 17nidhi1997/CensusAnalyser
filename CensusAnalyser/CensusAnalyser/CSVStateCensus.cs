@@ -7,12 +7,24 @@ using LumenWorks.Framework.IO.Csv;
 
 namespace CensusAnalyser
 {
-    class CSVStateCensus
+
+    public class CSVStateCensus : CSVFileBuilder
     {
- 
-        public static int StateLoadData(string filePath)
+
+        public int StateLoadData(string filePath, string header, string delimeter)
         {
             int numberOfRecord = 0;
+            var file_total = File.ReadLines(filePath);
+            string[] line_element = file_total.ToArray();
+            if (!line_element[0].Contains(header))
+            {
+                throw new CensusAnalyserException(CensusException.Wrong_Header + "");
+            }
+
+            else if (!file_total.Contains(";"))
+            {
+                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
+            }
             try
             {
                 CsvReader csvRecords = new CsvReader(new StreamReader(filePath), true);
@@ -37,25 +49,8 @@ namespace CensusAnalyser
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
             }
 
-        }
-        public static void CheckDelimiter(string filePath, string header)
-        {
-            string line1 = File.ReadAllText(filePath);
-            var file_total = File.ReadLines(filePath);
-            string[] line_element = file_total.ToArray();
-            if (!line_element[0].Contains(header))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
-            }
-            else
-            {
-                Console.WriteLine("right ");
-            }
 
-            if (!line1.Contains(";"))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
-            }
         }
+
     }
 }
