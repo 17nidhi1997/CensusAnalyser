@@ -43,14 +43,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "ChoETL": {
-              "target": "Package",
-              "version": "[1.2.0.1, )"
-            },
-            "ChoETL.JSON": {
-              "target": "Package",
-              "version": "[1.2.0.1, )"
-            },
             "LumenWorks.Framework.IO": {
               "target": "Package",
               "version": "[3.8.0, )"

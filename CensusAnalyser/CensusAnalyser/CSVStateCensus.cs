@@ -9,7 +9,9 @@ namespace CensusAnalyser
 {
     class CSVStateCensus
     {
- 
+
+        public delegate int DCsvStateDataLoad(string path);
+        public delegate void DCheckCSVDelimiterAndHeader(string path, string header);
         public static int StateLoadData(string filePath)
         {
             int numberOfRecord = 0;
@@ -38,7 +40,7 @@ namespace CensusAnalyser
             }
 
         }
-        public static void CheckDelimiter(string filePath, string header)
+        public static void CheckDelimiterAndHeader(string filePath, string header)
         {
             string line1 = File.ReadAllText(filePath);
             var file_total = File.ReadLines(filePath);
