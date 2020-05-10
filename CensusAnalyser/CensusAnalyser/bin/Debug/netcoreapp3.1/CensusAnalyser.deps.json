@@ -10,10 +10,10 @@
         "dependencies": {
           "ChoETL": "1.2.0.1",
           "ChoETL.JSON": "1.2.0.1",
-          "LumenWorks.Framework.IO": "3.8.0",
           "LumenWorksCsvReader": "4.0.0",
           "Microsoft.NET.Test.Sdk": "16.4.0",
           "NUnit3TestAdapter": "3.15.1",
+          "Newtonsoft.Json": "12.0.3",
           "NUnit": "3.12.0"
         },
         "runtime": {
@@ -40,7 +40,7 @@
       "ChoETL.JSON/1.2.0.1": {
         "dependencies": {
           "ChoETL": "1.2.0.1",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netcoreapp2.0/ChoETL.JSON.Core.dll": {
@@ -49,7 +49,6 @@
           }
         }
       },
-      "LumenWorks.Framework.IO/3.8.0": {},
       "LumenWorksCsvReader/4.0.0": {
         "runtime": {
           "lib/netstandard2.0/LumenWorks.Framework.IO.dll": {
@@ -195,7 +194,7 @@
       "Microsoft.TestPlatform.TestHost/16.4.0": {
         "dependencies": {
           "Microsoft.TestPlatform.ObjectModel": "16.4.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.TestPlatform.CommunicationUtilities.dll": {
@@ -358,19 +357,11 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
-      "Newtonsoft.Json/10.0.3": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.4.1",
-          "NETStandard.Library": "2.0.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Runtime.Serialization.Formatters": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.3.21018"
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
           }
         }
       },
@@ -754,21 +745,6 @@
           "runtime.native.System": "4.3.0"
         }
       },
-      "System.Runtime.Serialization.Formatters/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0"
-        }
-      },
-      "System.Runtime.Serialization.Primitives/4.3.0": {
-        "dependencies": {
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
       "System.Security.AccessControl/4.4.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -940,13 +916,6 @@
       "path": "choetl.json/1.2.0.1",
       "hashPath": "choetl.json.1.2.0.1.nupkg.sha512"
     },
-    "LumenWorks.Framework.IO/3.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Br2Q9j/tf2uF3Ci4CajidD18tui9DOg2iIzH5Xjro35ra6r8HGMD12B+ZlJ8v9AN3YXl7iPu5YDGbBlXVcZpHw==",
-      "path": "lumenworks.framework.io/3.8.0",
-      "hashPath": "lumenworks.framework.io.3.8.0.nupkg.sha512"
-    },
     "LumenWorksCsvReader/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1031,12 +1000,12 @@
       "path": "netstandard.library/2.0.0",
       "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/10.0.3": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
-      "path": "newtonsoft.json/10.0.3",
-      "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "NuGet.Frameworks/5.0.0": {
       "type": "package",
@@ -1324,20 +1293,6 @@
       "sha512": "sha512-cbz4YJMqRDR7oLeMRbdYv7mYzc++17lNhScCX0goO2XpGWdvAt60CGN+FHdePUEHCe/Jy9jUlvNAiNdM+7jsOw==",
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512"
-    },
-    "System.Runtime.Serialization.Formatters/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
-      "path": "system.runtime.serialization.formatters/4.3.0",
-      "hashPath": "system.runtime.serialization.formatters.4.3.0.nupkg.sha512"
-    },
-    "System.Runtime.Serialization.Primitives/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
-      "path": "system.runtime.serialization.primitives/4.3.0",
-      "hashPath": "system.runtime.serialization.primitives.4.3.0.nupkg.sha512"
     },
     "System.Security.AccessControl/4.4.0": {
       "type": "package",
