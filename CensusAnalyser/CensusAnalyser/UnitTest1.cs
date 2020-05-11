@@ -267,5 +267,29 @@ namespace CensusAnalyser
             int firstState = ab[0]["DensityPerSqKm"].Value<int>();
             Assert.AreEqual(expected, firstState);
         }
+        /// <Test>
+        /// Test for StateCensuscsv and json path to add into json after sorting return least  "AreaInSqKm"
+        /// </Test>
+        [Test]
+        public void givenCheckStateCensusDataAndAddToJsonPath_WhenSortFromleastAreaInSqKm_ShouldReturnAreaInSqKm()
+        {
+            string jsonFilePath = @"C:\Users\Srinidhi\source\repos\CensersAnaliserProblem\CensersAnaliserProblem\CSVStateCensus.json";
+            int expected = 0;
+            JArray ab = new JArray(utility.SortCensus(jsonFilePath, "AreaInSqKm"));
+            int firstState = ab[0]["AreaInSqKm"].Value<int>();
+            Assert.AreEqual(expected, firstState);
+        }
+        /// <Test>
+        /// Test for StateCensuscsv and json path to add into json after sorting return most  "AreaInSqKm"
+        /// </Test>
+        [Test]
+        public void givenCheckStateCensusDataAndAddToJsonPath_WhenSortFrommostAreaInSqKm_ShouldReturnAreaInSqKm()
+        {
+            string jsonFilePath = @"C:\Users\Srinidhi\source\repos\CensersAnaliserProblem\CensersAnaliserProblem\CSVStateCensus.json";
+            int expected = 342239;
+            JArray ab = new JArray(utility.SortCensus(jsonFilePath, "AreaInSqKm"));
+            int firstState = ab[28]["AreaInSqKm"].Value<int>();
+            Assert.AreEqual(expected, firstState);
+        }
     }
 }
