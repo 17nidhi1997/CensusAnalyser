@@ -10,10 +10,8 @@ namespace CensusAnalyser
     {
         public static int CSVLoadData(string filePath)
         {
-
             var line = File.ReadLines(filePath);
             string[] data = line.ToArray();
-
             return data.Length;
         }
     }
