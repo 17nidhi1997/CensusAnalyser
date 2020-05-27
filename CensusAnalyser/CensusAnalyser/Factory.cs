@@ -10,6 +10,5 @@ namespace CensusAnalyser
         {
             return new CSVStateCensus();
         }
-
     }
 }
