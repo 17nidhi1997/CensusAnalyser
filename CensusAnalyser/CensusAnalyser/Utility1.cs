@@ -9,8 +9,7 @@ namespace CensersAnalyser
 {
     class utility1
     {
-
-        // Method Convert Csv file to Json file
+        //// Method Convert Csv file to Json file
         public static void ConvertCsvFileToJsonObject(string cSVFile, string jsonFile)
         {
             string reader = File.ReadAllText(cSVFile);
@@ -20,12 +19,9 @@ namespace CensersAnalyser
                 using var w = new ChoJSONWriter(sb);
                 w.Write(value);
             }
-
             File.WriteAllText(jsonFile, sb.ToString());
         }
-
-
-        // Method for sorting json File.       
+        //// Method for sorting json File.       
         public static void SortStateCode(string path)
         {
             string json = File.ReadAllText(path);
@@ -46,7 +42,7 @@ namespace CensersAnalyser
             File.WriteAllText(path, jsonF);
         }
 
-        // Print the json file.      
+        //// Print the json file.      
         public static void PrintJsonFile(string path)
         {
             string json = File.ReadAllText(path);
@@ -57,7 +53,7 @@ namespace CensersAnalyser
             }
         }
 
-        // Return The first element  state name of Json Array.        
+        //// Return The first element  state name of Json Array.        
         public static string FirstElementNameOfJsonArray(string path, string elementName)
         {
             string json = File.ReadAllText(path);
@@ -65,7 +61,7 @@ namespace CensersAnalyser
             return stateArrary[0][elementName].ToString();
         }
 
-        // Return The first element  state name of Json Array.       
+        //// Return The first element  state name of Json Array.       
         public static string LastElementNameOfJsonArray(string path, string elementName)
         {
             string json = File.ReadAllText(path);
