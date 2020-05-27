@@ -7,7 +7,7 @@ namespace CensersAnalyser
 {
     public class utility
     {
-        // Method Convert Csv file to Json file.
+        //// Method Convert Csv file to Json file.
         public void ConvertCsvFileToJsonObject(string cSVFile, string jsonFile)
         {
             string re = File.ReadAllText(cSVFile);
@@ -17,11 +17,10 @@ namespace CensersAnalyser
                 using var w = new ChoJSONWriter(sb);
                 w.Write(p);
             }
-
             File.WriteAllText(jsonFile, sb.ToString());
         }
 
-        // Method for sorting json File.       
+        //// Method for sorting json File.       
         public static JArray SortCensus(string path, string key)
         {
             string json = File.ReadAllText(path);
@@ -38,21 +37,20 @@ namespace CensersAnalyser
                     }
                 }
             }
-
             return stateArrary;
         }
-        // Print the json file.      
+        //// Print the json file.      
         public static void PrintJsonFile(string path)
         {
             string json = File.ReadAllText(path);
             JArray stateArrary = JArray.Parse(json);
             for (int i = 0; i < stateArrary.Count; i++)
             {
-                // Console.WriteLine(stateArrary[i]);
+                Console.WriteLine(stateArrary[i]);
             }
         }
 
-        // Return The first element  state name of Json Array.        
+        //// Return The first element  state name of Json Array.        
         public static string FirstElementNameOfJsonArray(string path, string elementName)
         {
             string json = File.ReadAllText(path);
@@ -60,7 +58,7 @@ namespace CensersAnalyser
             return stateArrary[0][elementName].ToString();
         }
 
-        // Return The first element  state name of Json Array.       
+        //// Return The first element  state name of Json Array.       
         public object LastElementNameOfJsonArray(string path, string elementName)
         {
             string json = File.ReadAllText(path);
@@ -68,4 +66,5 @@ namespace CensersAnalyser
             int length = stateArrary.Count;
             return stateArrary[length - 1][elementName];
         }
-    }    }
+    }
+}
