@@ -9,7 +9,6 @@ namespace CensusAnalyser
 {
     class CSVStateCensus
     {
- 
         public static int StateLoadData(string filePath)
         {
             int numberOfRecord = 0;
@@ -19,7 +18,7 @@ namespace CensusAnalyser
                 int fieldCount = csvRecords.FieldCount;
                 string[] headers = csvRecords.GetFieldHeaders();
                 char delimete = csvRecords.Delimiter;
-                // string ArrayList
+                //// string ArrayList
                 List<string[]> record = new List<string[]>();
                 foreach (var line in File.ReadLines(filePath))
                 {
@@ -27,8 +26,6 @@ namespace CensusAnalyser
                     csvRecords.CopyCurrentRecordTo(tempRecord);
                     record.Add(tempRecord);
                     numberOfRecord++;
-
-
                 }
                 return numberOfRecord;
             }
@@ -36,7 +33,6 @@ namespace CensusAnalyser
             {
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
             }
-
         }
         public static void CheckDelimiter(string filePath, string header)
         {
@@ -51,7 +47,6 @@ namespace CensusAnalyser
             {
                 Console.WriteLine("right ");
             }
-
             if (!line1.Contains(";"))
             {
                 throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
