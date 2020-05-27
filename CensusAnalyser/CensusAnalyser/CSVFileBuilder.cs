@@ -6,8 +6,6 @@ namespace CensusAnalyser
 {
     public interface CSVFileBuilder
     {
-
        object StateLoadData(string filePath, string header, string delimeter = ",");
     }
-
 }
