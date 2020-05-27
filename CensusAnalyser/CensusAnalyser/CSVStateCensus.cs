@@ -7,7 +7,6 @@ using LumenWorks.Framework.IO.Csv;
 
 namespace CensusAnalyser
 {
-
     public class CSVStateCensusDAO : CSVFileBuilder
     {
         string header;
@@ -16,8 +15,7 @@ namespace CensusAnalyser
         public CSVStateCensusDAO()
         {
         }
-
-        // CsvStates parameterised constructor
+        //// CsvStates parameterised constructor
         public CSVStateCensusDAO(string filePath, string header, string delimeter = ",")
         {
             this.filepath = filepath;
@@ -34,7 +32,6 @@ namespace CensusAnalyser
             {
                 throw new CensusAnalyserException(CensusException.Wrong_Header + "");
             }
-
             else if (!file_total.Contains(";"))
             {
                 throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
@@ -45,7 +42,7 @@ namespace CensusAnalyser
                 int fieldCount = csvRecords.FieldCount;
                 string[] headers = csvRecords.GetFieldHeaders();
                 char delimete = csvRecords.Delimiter;
-                // string ArrayList
+                //// string ArrayList
                 List<string[]> record = new List<string[]>();
                 foreach (var line in File.ReadLines(filePath))
                 {
@@ -53,8 +50,6 @@ namespace CensusAnalyser
                     csvRecords.CopyCurrentRecordTo(tempRecord);
                     record.Add(tempRecord);
                     numberOfRecord++;
-
-
                 }
                 return numberOfRecord;
             }
@@ -62,9 +57,6 @@ namespace CensusAnalyser
             {
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
             }
-
-
         }
-
     }
 }
