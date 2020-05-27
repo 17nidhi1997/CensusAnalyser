@@ -8,7 +8,6 @@ namespace CensersAnaliserProblem
     {
         CSVFILE_IS_EMPTY
     }
-
     public class CSVException : Exception
     {
 
@@ -18,5 +17,4 @@ namespace CensersAnaliserProblem
             this.mgs = message;
         }
     }
-
 }
